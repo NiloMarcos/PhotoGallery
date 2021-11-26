@@ -3,11 +3,15 @@ import './index.scss';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-
 import api from '../../services/api';
+import Photos from '../../components/Photos.js';
+import Button from '../../components/ButtonPagination';
+
 
 export default function Dashboard(){
   const [photos, setPhotos] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [photoParPage, setPhotoParPage] = useState(4);
 
   useEffect(() => {
     async function loadPhotos(){
@@ -15,24 +19,27 @@ export default function Dashboard(){
       console.log(response.data.photos);
       setPhotos(response.data.photos);
     }
-
     loadPhotos();
   },[]);
+
+  const pages = Math.ceil(photos.length / photoParPage);
+  const startIndex = currentPage * photoParPage;
+  const endIndex = startIndex + photoParPage;
+  const currentItems = photos.slice(startIndex, endIndex);
 
   return(
     <main>
       <div className="Wrapper">
         <Header />
 
-        
-        {photos.map((item) => {
-          return(
-            <article key={item.id} className="Items-api">
-              <img src={item.src.landscape} alt="Foto de capa" />
-              <p><strong>Photo By:</strong> {item.photographer}</p>
-            </article>
-          )
-        })}
+        <Photos 
+          photos={currentItems}
+        />
+
+        <Button 
+          pages={pages}
+          setCurrentPage={setCurrentPage}
+        />
 
         <Footer />
       </div>
