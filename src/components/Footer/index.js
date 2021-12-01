@@ -1,12 +1,21 @@
 import React from 'react';
 import './footer.scss';
 
-export default function Footer(){
-  return(
+export default function Footer() {
+  return (
     <main>
-      <footer className="Footer">
-        <p>Footer</p>
-      </footer>
+      <div className="footer">
+        <footer>
+          <nav>
+            <ul className="list-inline">
+              <li className="list-inline-item"><a href="*">Home</a></li>
+              <li className="list-inline-item"><a href="*">Wallpapers</a></li>
+              <li className="list-inline-item"><a href="*">Update</a></li>
+            </ul>
+          </nav>
+          <p className="copyright">PhotoGallery© 2021</p>
+        </footer>
+      </div>
     </main>
   );
 }

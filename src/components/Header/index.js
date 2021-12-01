@@ -13,7 +13,7 @@ export default function Header() {
             <ul>
               <li><a href="*">Home</a></li>
               <li><a href="*">Wallpapers</a></li>
-              <li><a href="*">Atualizar</a></li>
+              <li><a href="*">Update</a></li>
             </ul>
           </nav>
         </div>

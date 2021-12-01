@@ -40,3 +40,14 @@
     color: rgba(196, 196, 196, 0.658);
   }
 }
+
+
+@media screen and (max-width: 350px){
+  .wrapper {
+    width: 100%;
+  }
+
+  .Wrapper-nav {
+    display: none;
+  }
+}
