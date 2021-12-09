@@ -8,7 +8,7 @@ import Photos from '../../components/Photos';
 import Button from '../../components/ButtonPagination';
 
 
-export default function Dashboard(){
+export default function Home(){
   const [photos, setPhotos] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [photoParPage, setPhotoParPage] = useState(1);
